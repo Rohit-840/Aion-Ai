@@ -78,24 +78,44 @@ export const pricingPlans = [
 
 export const pricingFaqs = [
   {
-    question: 'What are credits?',
+    question: 'What is Aion AI?',
     answer:
-      'Credits are tokens tied to your account balance. Each AI conversation can draw from your credits. Every new account starts with 25 free credits.',
+      'Aion AI is a single platform for chatting with multiple leading AI models — ChatGPT, Claude, Gemini, Grok and more — plus Aion Mind, a master agent that coordinates them. One account, one balance, no separate subscriptions to juggle.',
   },
   {
-    question: 'Which AIs can I use?',
+    question: 'What are credits and how do they work?',
     answer:
-      'Aion AI brings together leading models — ChatGPT, Claude, Gemini, Grok, Perplexity, DeepSeek and Copilot — plus the Aion Mind master agent.',
+      'Credits are tokens tied to your account balance. Each AI conversation can draw from your credits, and your balance is visible in your workspace at all times. Every new account starts with 25 free credits.',
+  },
+  {
+    question: 'Which AI models can I use?',
+    answer:
+      'Aion AI brings together ChatGPT, Claude, Gemini, Grok, Perplexity, DeepSeek and Copilot. You can pick a model yourself, or let Aion Mind choose and combine the best ones for each request.',
   },
   {
     question: 'What is Aion Mind?',
     answer:
-      'Aion Mind is a master agent that reads your request, routes it to the most suitable models, and combines their strengths into a single clear answer.',
+      'Aion Mind is the master agent at the centre of the platform. It reads your request, routes it to the most suitable models, and merges their strengths into one clear answer — so you never have to guess which model to use.',
   },
   {
-    question: 'Do payments work now?',
+    question: 'Do I need an account to start chatting?',
     answer:
-      'No. Payment integration is not active in this version. Paid plans are displayed as future-ready product structure.',
+      'Yes. Chatting is available after a quick, free signup — that is how your credits stay tied to you. Creating an account takes only a name, email and password.',
+  },
+  {
+    question: 'What happens when I run out of credits?',
+    answer:
+      'When your balance reaches zero you can still browse the platform, but new conversations pause until your credits are topped up. Paid plans (coming soon) will add a monthly credit allowance.',
+  },
+  {
+    question: 'Do payments work right now?',
+    answer:
+      'Not yet. This version has no payment integration — only the Free plan is active. Paid plans are shown as future-ready product structure so pricing is ready when billing goes live.',
+  },
+  {
+    question: 'Is Aion AI affiliated with OpenAI, Google or other providers?',
+    answer:
+      'No. Aion AI is an independent platform. Model names are referenced descriptively only — Aion AI is not affiliated with, sponsored by, or endorsed by these companies.',
   },
 ];
 

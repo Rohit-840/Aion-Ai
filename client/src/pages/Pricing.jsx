@@ -144,8 +144,8 @@ const Pricing = () => {
           <Container>
             <SectionHeading
               eyebrow="FAQ"
-              title="Questions about credits and plans."
-              description="Everything you need to know about how the credit system works today and where it is heading."
+              title="Frequently asked questions."
+              description="Answers to the most common questions about Aion AI, credits, the models and how the platform works."
             />
             <div className="mx-auto mt-12 flex max-w-2xl flex-col gap-3">
               {pricingFaqs.map((faq, index) => (

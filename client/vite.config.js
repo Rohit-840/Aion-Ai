@@ -14,12 +14,14 @@ export default defineConfig({
     port: 4173,
   },
   build: {
+    chunkSizeWarningLimit: 900,
     rollupOptions: {
       output: {
         // Split heavy vendors into their own chunks for faster loads.
         manualChunks: {
           react: ['react', 'react-dom', 'react-router-dom'],
           animation: ['framer-motion', 'gsap', 'lenis'],
+          three: ['three', '@react-three/fiber'],
         },
       },
     },

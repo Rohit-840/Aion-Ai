@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 import Container from './Container';
 
 /** Aion AI aperture logo mark (footer variant). */
@@ -19,7 +20,7 @@ const LogoMark = () => (
 
 const LINK_GROUPS = [
   {
-    title: 'Platform',
+    title: 'About',
     links: [
       { label: 'Home', to: '/' },
       { label: 'Agents', to: '/agents' },
@@ -36,15 +37,46 @@ const LINK_GROUPS = [
   },
 ];
 
+/**
+ * Social media links.
+ * TODO: replace each "#" with the real profile URL when available.
+ */
+const SOCIAL_LINKS = [
+  { label: 'Facebook', icon: Facebook, href: '#' },
+  { label: 'Instagram', icon: Instagram, href: '#' },
+  { label: 'Twitter', icon: Twitter, href: '#' },
+  { label: 'LinkedIn', icon: Linkedin, href: '#' },
+];
+
 const Footer = () => (
-  <footer className="relative mt-10 border-t border-white/10">
+  <footer className="relative mt-10 border-t border-white/10 bg-aion-charcoal/75 backdrop-blur-xl">
     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aion-violet/50 to-transparent" />
 
     <Container>
       <div className="grid gap-12 py-14 sm:py-16 md:grid-cols-[1.6fr_1fr_1fr]">
         {/* Brand */}
         <div className="max-w-sm">
-          <Link to="/" className="flex items-center gap-2.5" aria-label="Aion AI — home">
+          {/* Social media */}
+          <div className="flex items-center gap-2.5">
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={social.label}
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-aion-muted transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:bg-white/10 hover:text-white"
+              >
+                <social.icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+
+          <Link
+            to="/"
+            className="mt-6 flex items-center gap-2.5"
+            aria-label="Aion AI — home"
+          >
             <LogoMark />
             <span className="font-display text-lg font-bold tracking-tight text-white">
               Aion AI

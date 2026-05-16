@@ -12,42 +12,36 @@ const FinalCTA = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="glow-card noise-overlay relative overflow-hidden rounded-4xl px-6 py-16 text-center sm:px-12 sm:py-20"
+        className="mx-auto max-w-2xl text-center"
       >
-        {/* Ambient orbs */}
-        <div className="orb h-64 w-64 -left-16 -top-20 animate-pulseGlow bg-aion-violet/30" />
-        <div className="orb h-56 w-56 -bottom-20 -right-12 animate-float bg-aion-gold/20" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-aion-gold">
+          <Sparkles className="h-3.5 w-3.5" />
+          Get started
+        </span>
 
-        <div className="relative mx-auto max-w-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-aion-gold">
-            <Sparkles className="h-3.5 w-3.5" />
-            Get started
-          </span>
+        <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight text-white text-balance sm:text-4xl lg:text-5xl">
+          Start chatting with every AI today.
+        </h2>
 
-          <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight text-white text-balance sm:text-4xl lg:text-5xl">
-            Start chatting with every AI today.
-          </h2>
+        <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-aion-muted text-balance">
+          Create your free account, get 25 credits, and start chatting with every leading
+          AI — coordinated by Aion Mind, the master agent.
+        </p>
 
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-aion-muted text-balance">
-            Create your free account, get 25 credits, and start chatting with every leading
-            AI — coordinated by Aion Mind, the master agent.
-          </p>
-
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <MagneticButton>
-              <PremiumButton to="/signup" size="lg" icon={Sparkles}>
-                Start Chatting Free
-              </PremiumButton>
-            </MagneticButton>
-            <PremiumButton to="/pricing" size="lg" variant="secondary" icon={ArrowRight} iconRight>
-              View Plans
+        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <MagneticButton>
+            <PremiumButton to="/signup" size="lg" icon={Sparkles}>
+              Start Chatting Free
             </PremiumButton>
-          </div>
-
-          <p className="mt-6 text-xs text-white/40">
-            No payment required — your first 25 credits are on us.
-          </p>
+          </MagneticButton>
+          <PremiumButton to="/pricing" size="lg" variant="secondary" icon={ArrowRight} iconRight>
+            View Plans
+          </PremiumButton>
         </div>
+
+        <p className="mt-6 text-xs text-white/40">
+          No payment required — your first 25 credits are on us.
+        </p>
       </motion.div>
     </Container>
   </section>

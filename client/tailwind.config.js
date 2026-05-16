@@ -74,6 +74,14 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        twinkle: {
+          '0%, 100%': { opacity: '0.12', transform: 'scale(0.8)' },
+          '50%': { opacity: '0.9', transform: 'scale(1.15)' },
+        },
+        drift: {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+          '50%': { transform: 'translate3d(14px, -18px, 0)' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
@@ -84,6 +92,8 @@ export default {
         slowSpin: 'slowSpin 44s linear infinite',
         gradientShift: 'gradientShift 9s ease infinite',
         fadeUp: 'fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
+        twinkle: 'twinkle 4s ease-in-out infinite',
+        drift: 'drift 16s ease-in-out infinite',
       },
       backgroundSize: {
         '200': '200% 200%',

@@ -53,7 +53,7 @@ their strengths into one answer.
 
 | Layer        | Technologies |
 |--------------|--------------|
-| **Frontend** | React, Vite, React Router DOM, Tailwind CSS, Framer Motion, GSAP + ScrollTrigger, Lenis, Axios, Lucide React, React Hot Toast |
+| **Frontend** | React, Vite, React Router DOM, Tailwind CSS, Framer Motion, GSAP + ScrollTrigger, Lenis, Three.js + React Three Fiber, Axios, Lucide React, React Hot Toast |
 | **Backend**  | Node.js, Express.js, MongoDB, Mongoose, JWT, bcryptjs, cookie-parser, cors, dotenv, helmet, express-rate-limit, morgan |
 | **Database** | MongoDB (local or MongoDB Atlas) |
 

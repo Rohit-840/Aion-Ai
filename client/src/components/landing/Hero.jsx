@@ -117,24 +117,16 @@ const Hero = () => (
           <div className="bg-grid bg-grid-fade absolute inset-0 -z-10 opacity-40" />
           <div className="pointer-events-none absolute -right-6 -top-8 h-40 w-40 rounded-full bg-aion-cyan/20 blur-3xl" />
 
-          {/* Floating agent badge */}
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -right-2 -top-5 z-20 sm:-right-4"
-          >
+          {/* Agent badge */}
+          <div className="absolute -right-2 -top-5 z-20 sm:-right-4">
             <div className="glow-card flex items-center gap-2 rounded-full px-3.5 py-2">
               <Coins className="h-4 w-4 text-aion-gold" />
               <span className="text-xs font-semibold text-white">25 free credits</span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Chat window */}
-          <motion.div
-            animate={{ y: [0, -9, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            className="glow-card relative z-10 rounded-3xl p-4 sm:p-5"
-          >
+          <div className="glow-card relative z-10 rounded-3xl p-4 sm:p-5">
             {/* Header */}
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
               <div className="flex items-center gap-2">
@@ -205,14 +197,10 @@ const Hero = () => (
                 <Send className="h-4 w-4 text-white" />
               </span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Floating model-count card */}
-          <motion.div
-            animate={{ y: [0, 13, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-7 -left-3 z-20 sm:-left-6"
-          >
+          {/* Model-count card */}
+          <div className="absolute -bottom-7 -left-3 z-20 sm:-left-6">
             <div className="glow-card flex items-center gap-2.5 rounded-2xl p-3">
               <div className="flex -space-x-2">
                 {allAgents.slice(1, 5).map((agent) => (
@@ -224,7 +212,7 @@ const Hero = () => (
                 <p className="text-[11px] text-aion-muted">+ Aion Mind</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </Container>
