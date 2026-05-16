@@ -1,0 +1,19 @@
+{
+  "name": "aion-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aion AI — a multi-AI chatbot platform foundation built on the MERN stack.",
+  "author": "Aion AI",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -n SERVER,CLIENT -c magenta,cyan \"npm run server\" \"npm run client\"",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "seed:admin": "npm --prefix server run seed:admin",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

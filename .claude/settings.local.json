@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm install --prefix client --no-audit --no-fund)",
+      "PowerShell(npm install --prefix server --no-audit --no-fund)",
+      "PowerShell(npm install --no-audit --no-fund)"
+    ]
+  }
+}
