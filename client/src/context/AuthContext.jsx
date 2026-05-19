@@ -58,6 +58,18 @@ export const AuthProvider = ({ children }) => {
   const login = useCallback(
     async (credentials) => {
       const data = await authService.login(credentials);
+
+      // Admins must use the dedicated /aiadmin portal — reject here.
+      if (data.user.role === 'admin') {
+        try {
+          await authService.logout();
+        } catch {
+          /* ignore — the session is discarded either way */
+        }
+        setUser(null);
+        throw new Error('Admin accounts must sign in from the admin portal.');
+      }
+
       setUser(data.user);
       toast.success(`Welcome back, ${data.user.name.split(' ')[0]}.`);
       redirectAfterAuth(data.user);
