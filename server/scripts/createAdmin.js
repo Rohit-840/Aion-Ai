@@ -9,7 +9,7 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const { hashPassword } = require('../src/utils/password');
 const User = require('../src/models/User');
 
 const run = async () => {
@@ -23,7 +23,7 @@ const run = async () => {
     await mongoose.connect(uri);
     console.log(`✅  Connected to MongoDB (${mongoose.connection.name})`);
 
-    const passwordHash = await bcrypt.hash(password, 12);
+    const passwordHash = await hashPassword(password);
     const existing = await User.findOne({ email });
 
     if (existing) {
@@ -53,7 +53,7 @@ const run = async () => {
     console.log(`👤  Admin email   : ${email}`);
     console.log('🔐  Admin password: (the ADMIN_PASSWORD value from your .env)');
     console.log('─────────────────────────────────────');
-    console.log('🎉  Admin seed complete. Log in at /login and open /admin.');
+    console.log('🎉  Admin seed complete. Sign in at the /aiadmin portal.');
   } catch (error) {
     console.error('❌  Failed to seed admin:', error.message);
     process.exitCode = 1;

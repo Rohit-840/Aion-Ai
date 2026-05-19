@@ -16,7 +16,7 @@ the polished, expandable base those features will plug into.
 ## 1. Project Overview
 
 - A premium, fully responsive **marketing website** (landing, agents, pricing)
-- **JWT authentication** with bcrypt-hashed passwords and httpOnly cookies
+- **JWT authentication** with Argon2id-hashed passwords and httpOnly cookies
 - A real **credit system** — every user starts with 25 credits, and every
   credit movement is recorded as a transaction
 - A protected, dark-premium **admin panel** for managing users and credits
@@ -54,7 +54,7 @@ their strengths into one answer.
 | Layer        | Technologies |
 |--------------|--------------|
 | **Frontend** | React, Vite, React Router DOM, Tailwind CSS, Framer Motion, GSAP + ScrollTrigger, Lenis, Three.js + React Three Fiber, Axios, Lucide React, React Hot Toast |
-| **Backend**  | Node.js, Express.js, MongoDB, Mongoose, JWT, bcryptjs, cookie-parser, cors, dotenv, helmet, express-rate-limit, morgan |
+| **Backend**  | Node.js, Express.js, MongoDB, Mongoose, JWT, @node-rs/argon2, cookie-parser, cors, dotenv, helmet, express-rate-limit, morgan |
 | **Database** | MongoDB (local or MongoDB Atlas) |
 
 ## 5. Folder Structure
@@ -155,8 +155,9 @@ cd server
 npm run seed:admin
 ```
 
-Then log in at `/login` with `ADMIN_EMAIL` / `ADMIN_PASSWORD` — admins are
-sent straight to `/admin`.
+Then sign in at the dedicated admin portal **`/aiadmin`** with `ADMIN_EMAIL` /
+`ADMIN_PASSWORD` — only admin accounts are admitted there, and you land
+straight on `/admin`.
 
 ## 10. Post-Login Redirect
 

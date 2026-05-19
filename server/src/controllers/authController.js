@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+const { hashPassword, verifyPassword } = require('../utils/password');
 const User = require('../models/User');
 const CreditTransaction = require('../models/CreditTransaction');
 const { sendTokenCookie, clearTokenCookie } = require('../utils/generateToken');
@@ -43,7 +43,7 @@ const register = async (req, res, next) => {
     }
 
     // ── Create user with starter credits ─────────
-    const passwordHash = await bcrypt.hash(password, 12);
+    const passwordHash = await hashPassword(password);
     const user = await User.create({
       name,
       email,
@@ -92,7 +92,7 @@ const login = async (req, res, next) => {
         .json({ success: false, message: 'Invalid email or password.' });
     }
 
-    const isMatch = await bcrypt.compare(password, user.passwordHash);
+    const isMatch = await verifyPassword(user.passwordHash, password);
     if (!isMatch) {
       return res
         .status(401)

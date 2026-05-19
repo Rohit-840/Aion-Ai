@@ -10,6 +10,7 @@ import Agents from './pages/Agents';
 import Gallery from './pages/Gallery';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import AdminLogin from './pages/AdminLogin';
 import AppPlaceholder from './pages/AppPlaceholder';
 import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
@@ -34,6 +35,7 @@ const App = () => (
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/aiadmin" element={<AdminLogin />} />
 
         {/* Protected — requires an authenticated user */}
         <Route

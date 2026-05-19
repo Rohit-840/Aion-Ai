@@ -43,7 +43,7 @@ export const features = [
   {
     icon: ShieldCheck,
     title: 'Secure authentication',
-    text: 'Accounts are protected with JWT, httpOnly cookies, bcrypt password hashing and backend validation.',
+    text: 'Accounts are protected with JWT, httpOnly cookies, Argon2id password hashing and backend validation.',
   },
   {
     icon: SlidersHorizontal,

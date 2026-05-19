@@ -10,7 +10,7 @@
     "seed:admin": "node scripts/createAdmin.js"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "@node-rs/argon2": "^2.0.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

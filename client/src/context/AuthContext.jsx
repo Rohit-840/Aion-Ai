@@ -66,6 +66,30 @@ export const AuthProvider = ({ children }) => {
     [redirectAfterAuth]
   );
 
+  // Admin-only login — used by the dedicated /aiadmin portal.
+  // Any account that is not an admin is immediately signed out + rejected.
+  const adminLogin = useCallback(
+    async (credentials) => {
+      const data = await authService.login(credentials);
+
+      if (data.user.role !== 'admin') {
+        try {
+          await authService.logout();
+        } catch {
+          /* ignore — the session is discarded either way */
+        }
+        setUser(null);
+        throw new Error('These credentials do not have admin access.');
+      }
+
+      setUser(data.user);
+      toast.success(`Welcome back, ${data.user.name.split(' ')[0]}.`);
+      navigate('/admin');
+      return data.user;
+    },
+    [navigate]
+  );
+
   const signup = useCallback(
     async (payload) => {
       const data = await authService.register(payload);
@@ -105,6 +129,7 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated: Boolean(user),
     isAdmin: user?.role === 'admin',
     login,
+    adminLogin,
     signup,
     logout,
     refreshUser,
