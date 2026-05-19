@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true, // expose on the local network (prints a Network URL)
-    port: 5173,
+    port: 5174,
     open: false,
   },
   preview: {
